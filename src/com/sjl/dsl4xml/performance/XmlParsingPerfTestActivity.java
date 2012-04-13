@@ -11,13 +11,13 @@ public class XmlParsingPerfTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        ComparisonRunner _cr = new ComparisonRunner();
+        PerformanceComparisonMain _pc = new PerformanceComparisonMain();
+        
         try {
         	File _f = new File(Environment.getExternalStorageDirectory(), "results.html");
         	_f.createNewFile();
-	        _cr.comparePerformance(4, 10, _f);
+	        _pc.comparePerformance(4, 10, _f);
         } catch (Exception anExc) {
-anExc.printStackTrace();
         	throw new RuntimeException(anExc);
         }
     }
